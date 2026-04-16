@@ -98,20 +98,7 @@ with st.sidebar:
             
                 except Exception as e:
                     st.warning("⚠️ Could not fetch transcript (video may not have captions).")
-               '''
-                try:
-                    yt_loader = YoutubeLoader.from_youtube_url(
-                        youtube_url,
-                        add_video_info=False
-                    )
-                    yt_docs = yt_loader.load()
-            
-                    for d in yt_docs:
-                        d.metadata["source"] = "YouTube"
-            
-                except Exception as e:
-                    st.warning("⚠️ Could not load YouTube video. Try another video with captions.")
-                '''
+               
                 all_docs.extend(yt_docs)
             # -------- Web --------
             if web_url:
