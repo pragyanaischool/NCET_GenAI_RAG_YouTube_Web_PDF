@@ -10,3 +10,5 @@ sentence-transformers
 transformers
 python-dotenv
 pypdf
+youtube-transcript-api
+pytube
