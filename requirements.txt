@@ -12,3 +12,4 @@ python-dotenv
 pypdf
 youtube-transcript-api
 pytube
+torchvision
