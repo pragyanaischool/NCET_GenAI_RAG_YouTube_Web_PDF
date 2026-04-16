@@ -13,3 +13,6 @@ pypdf
 youtube-transcript-api
 pytube
 torchvision
+beautifulsoup4
+requests
+lxml
