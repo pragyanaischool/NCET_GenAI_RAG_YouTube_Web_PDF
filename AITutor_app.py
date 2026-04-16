@@ -40,7 +40,7 @@ serp_api_key = st.secrets["SERPAPI_API_KEY"]
 # ------------------ UI ------------------
 st.set_page_config(page_title="PragyanAI Student Tutor", layout="wide")
 st.title("🎓 PragyanAI Multi-Source AI Tutor")
-
+st.image("PragyanAI_Transperent.png")
 # ------------------ SESSION ------------------
 if "vector" not in st.session_state:
     st.session_state.vector = None
