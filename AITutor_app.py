@@ -25,7 +25,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 
 # Google Search
 from langchain_community.utilities import SerpAPIWrapper
-from langchain.schema import Document
+from langchain_core.documents import Document
 
 # ------------------ CLEAN LOGS ------------------
 warnings.filterwarnings("ignore", category=FutureWarning)
