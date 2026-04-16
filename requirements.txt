@@ -16,3 +16,4 @@ torchvision
 beautifulsoup4
 requests
 lxml
+google-search-results
