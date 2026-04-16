@@ -47,6 +47,12 @@ if "vector" not in st.session_state:
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
+def extract_video_id(url):
+    if "v=" in url:
+        return url.split("v=")[-1]
+    elif "youtu.be/" in url:
+        return url.split("/")[-1]
+    return None
 # ------------------ SIDEBAR ------------------
 with st.sidebar:
     st.header("📚 Add Learning Sources")
@@ -77,6 +83,23 @@ with st.sidebar:
             if youtube_url:
                 yt_docs = []
                 try:
+                    video_id = extract_video_id(youtube_url)
+            
+                    transcript = YouTubeTranscriptApi.get_transcript(video_id)
+            
+                    text = " ".join([t["text"] for t in transcript])
+            
+                    yt_docs = [
+                        Document(
+                            page_content=text,
+                            metadata={"source": "YouTube"}
+                        )
+                    ]
+            
+                except Exception as e:
+                    st.warning("⚠️ Could not fetch transcript (video may not have captions).")
+               '''
+                try:
                     yt_loader = YoutubeLoader.from_youtube_url(
                         youtube_url,
                         add_video_info=False
@@ -88,7 +111,7 @@ with st.sidebar:
             
                 except Exception as e:
                     st.warning("⚠️ Could not load YouTube video. Try another video with captions.")
-                
+                '''
                 all_docs.extend(yt_docs)
             # -------- Web --------
             if web_url:
