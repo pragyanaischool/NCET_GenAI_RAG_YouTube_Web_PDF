@@ -11,7 +11,7 @@ from langchain_groq import ChatGroq
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
-
+from langchain_community.document_loaders import YoutubeLoader
 # Loaders
 from langchain_community.document_loaders import (
     PyPDFLoader,
